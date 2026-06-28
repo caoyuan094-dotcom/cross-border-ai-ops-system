@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 跨境电商系统</title>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="模块导航">
+        <div class="brand-lockup">
+          <div class="brand-mark">AI</div>
+          <div>
+            <div class="brand-title">跨境电商系统</div>
+            <div class="brand-subtitle">Amazon AI Ops</div>
+          </div>
+        </div>
+
+        <div class="side-section-label">业务模块</div>
+        <nav id="moduleNav" class="module-nav"></nav>
+
+        <div class="system-card">
+          <div class="system-card-title">运行模式</div>
+          <div id="modePill" class="mode-pill">检测中</div>
+          <p id="modeNote">正在读取本地服务状态。</p>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI Prompt Operating System</p>
+            <h1>把提示词库变成可运营的工作台</h1>
+          </div>
+          <div class="topbar-actions">
+            <button id="copyPromptBtn" class="icon-button" type="button" title="复制当前Prompt" aria-label="复制当前Prompt">CP</button>
+            <button id="downloadBtn" class="primary-button" type="button">下载结果</button>
+          </div>
+        </header>
+
+        <section class="project-strip" aria-label="核心流程">
+          <div class="strip-item active">
+            <span>01</span>
+            <strong>输入业务数据</strong>
+            <small>ASIN / 广告 / Review / 库存</small>
+          </div>
+          <div class="strip-item">
+            <span>02</span>
+            <strong>选择工作流</strong>
+            <small>六大模块二十个任务</small>
+          </div>
+          <div class="strip-item">
+            <span>03</span>
+            <strong>生成交付物</strong>
+            <small>报告 / Listing / 动作表</small>
+          </div>
+          <div class="strip-item">
+            <span>04</span>
+            <strong>复核与导出</strong>
+            <small>证据、风险、Markdown</small>
+          </div>
+        </section>
+
+        <section class="control-grid">
+          <div class="workflow-panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker" id="moduleKicker">客户诊断报告</p>
+                <h2 id="workflowTitle">全链路店铺诊断</h2>
+              </div>
+              <div class="workflow-meta">
+                <span id="timeBadge">8-12 分钟</span>
+                <span id="outputBadge">店铺诊断报告</span>
+              </div>
+            </div>
+
+            <div id="workflowTabs" class="workflow-tabs" role="tablist"></div>
+
+            <div class="quick-starts">
+              <span>快速载入</span>
+              <div id="quickStarts" class="quick-start-actions"></div>
+            </div>
+
+            <form id="workflowForm" class="input-form"></form>
+
+            <div class="command-bar">
+              <button id="generateBtn" class="primary-button" type="button">生成交付物</button>
+              <button id="resetBtn" class="secondary-button" type="button">清空输入</button>
+              <div id="statusText" class="status-text">等待输入</div>
+            </div>
+          </div>
+
+          <aside class="inspector-panel" aria-label="证据与风险">
+            <div class="inspector-section">
+              <div class="inspector-title">当前模块价值</div>
+              <p id="modulePromise"></p>
+            </div>
+
+            <div class="inspector-section">
+              <div class="inspector-title">必需证据</div>
+              <ul id="evidenceList" class="check-list"></ul>
+            </div>
+
+            <div class="inspector-section">
+              <div class="inspector-title">风险边界</div>
+              <ul id="guardrailList" class="risk-list"></ul>
+            </div>
+
+            <div class="inspector-section">
+              <div class="inspector-title">Prompt 预览</div>
+              <pre id="promptPreview" class="prompt-preview"></pre>
+            </div>
+          </aside>
+        </section>
+
+        <section class="result-layout">
+          <article class="result-panel">
+            <div class="panel-head compact">
+              <div>
+                <p class="panel-kicker">输出结果</p>
+                <h2 id="resultTitle">还没有生成内容</h2>
+              </div>
+              <div class="result-actions">
+                <button id="copyResultBtn" class="secondary-button" type="button">复制结果</button>
+              </div>
+            </div>
+            <div id="resultEmpty" class="empty-state">
+              <div class="empty-visual">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <h3>先选择一个任务，然后生成可编辑交付物。</h3>
+              <p>没有配置 API Key 时，系统会生成本地结构化草稿；配置后会调用真实模型。</p>
+            </div>
+            <pre id="resultOutput" class="result-output hidden"></pre>
+          </article>
+
+          <aside class="history-panel">
+            <div class="panel-head compact">
+              <div>
+                <p class="panel-kicker">运行记录</p>
+                <h2>最近生成</h2>
+              </div>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
