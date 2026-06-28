@@ -1,0 +1,20 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local runtime state and generated artifacts
+data/runs.json
+.playwright-cli/
+wechat_ai_crossborder_series/
+
+# Local editor and temporary files
+.vscode/
+.idea/
+*.log
+*.tmp
