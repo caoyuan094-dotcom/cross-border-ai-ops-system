@@ -1,0 +1,13 @@
+{
+  "name": "cross-border-ai-ops-system",
+  "version": "1.0.0",
+  "description": "Local AI cross-border ecommerce operations system for Amazon workflows.",
+  "scripts": {
+    "start": "node server.js",
+    "start:local": "./start.sh",
+    "check": "node --check server.js && node --check data/prompts.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
